@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.tabs button.active {
+    background-color: #333;
+    color: white;
+}
+
+.email {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.email .from {
+    color: #888;
+    font-size: 14px;
+}
+
+.email .subject {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.email a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.comment {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.comment .name {
+    font-weight: bold;
+    color: #262626;
+    min-width: 100px;
+}
+
+.comment .text {
+    color: #262626;
+}
+
+.stored-xss {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.dom-based-xss {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.fakeURL input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.fakeURL button {
+    padding: 10px 20px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}

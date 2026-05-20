@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>XSS-PLAYGROUND</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>XSS-PLAYGROUND</h1>
+        <div class="tabs">
+            <button onclick="showTab('reflected')">Reflected XSS</button>
+            <button onclick="showTab('stored')">Stored XSS</button>
+            <button onclick="showTab('dom')">DOM Based XSS</button>
+        </div>
+        <div class="content">
+            <div class="reflected-xss">
+                <div class="email">
+                    <p class="from">From: security@adultsite.co.jp</p>
+                    <p class="subject">Subject: URGENT!</p>
+                    <p class="text">Text: Your privacy has been spread. Click immediately to verify!
+                        <a href="#" onclick="reflectedAttack()">Click here to verify</a>
+                    </p>
+                </div>
+                <div id="reflected-result"></div>
+            </div>
+            <div class="stored-xss">
+                <div class="comment">
+                    <p class="name">catlovers</p>
+                    <p class="text">Great post!😊</p>
+                </div>
+                <div class="comment">
+                    <p class="name">tokyo_girl</p>
+                    <p class="text">Love this!❤️</p>
+                </div>
+                <div class="comment">
+                    <p class="name">city_tokyo</p>
+                    <p class="text">announcement TOKYO citizens from government
+                        <script>alert(document.cookie)</script>
+                    </p>
+                </div>
+                <div id="stored-result"></div>
+
+            </div>
+
+            <div class="dom-based-xss">
+                <p class="fakeURL">
+                    <input type="text" placeholder="example.com/page#">
+                    <button class="checkaccount" onclick="domAttack()">check your account</button>
+                </p>
+                <div id="dom-result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
