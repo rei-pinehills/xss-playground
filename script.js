@@ -18,8 +18,15 @@ function reflectedAttack() {
     document.getElementById('reflected-result').innerHTML = '⚠️ Cookie stolen ! session_id=abc123xyz';
 }
 function storedAttack() {
-    document.getElementById('stored-result').innerHTML = '⚠️ Cookie stolen ! session_id=abc123xyz';
+    setTimeout(function () {
+        document.getElementById('stored-result').innerHTML = '⚠️ Cookie stolen ! session_id=abc123xyz';
+    }, 2000);
 }
 function domAttack() {
-    document.getElementById('dom-result').innerHTML = '⚠️ Cookie stolen ! session_id=abc123xyz';
+    const input = document.getElementById('url-input').value;
+    if (input === '') {
+        document.getElementById('dom-result').innerHTML = '⚠️ Please enter a URL first!';
+        return;
+    }
+    document.getElementById('dom-result').innerHTML = '⚠️ Executing: ' + input;
 }
